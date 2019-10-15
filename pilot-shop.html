@@ -6,6 +6,31 @@
         <link rel="stylesheet" type="text/css" href="normalize.css">
         <link rel="stylesheet" type="text/css" href="pilot-shop-style.css">
         <link rel="stylesheet" type="text/css" href="pilot-desktop-mode.css">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.4.2/handlebars.js" integrity="sha256-hSzapznWRy/aOZkctlN03an9DxCLlN8ZCQS0lxntiHg=" crossorigin="anonymous"></script>
+
+        <script defer src="script.js"></script>
+
+        <script id="product" type="text/x-handlebars-template">
+            <div class="product-box">
+                <div class="product-img">
+                    {{#if discount}}
+                    <div class="sticker discount">-{{discount}}%</div>
+                    {{/if}}
+                    <div class="sticker new">NEW</div>
+                    <img src="{{image}}">
+                </div>
+                <div class="product-info">
+                    <h2 class="product-name">{{name}}</h2>
+                    <div class="product-description">{{desc}}</div>
+                    <div class="product-price">
+                        From <span class="sale-price">${{price}}.00</span> <span class="old-price">${{originalPrice
+                        }}.00</span>
+                    </div>
+                </div>
+            </div>
+        </script>
+
     </head>
     <body>
         <div class="header">
@@ -96,109 +121,7 @@
             <div class="content-area">
                 <h2 class="page-heading">Featured Products</h2>
                 <div class="product-container">
-                    <div class="product-box">
-                        <div class="product-img">
-                            <div class="sticker discount">-45%</div>
-                            <div class="sticker new">New</div>
-                            <img src="Assets/akg_aviation_av100_anr_headset_01_270x335_crop_top.png">
-                        </div>
-                        <div class="product-info">
-                            <h2 class="product-name">AKG Aviation AV100 ANR Headset</h2>
-                            <div class="product-description">When you deal with sky During ne...</div>
-                            <div class="product-price">From <span class="sale-price">$66.00</span> <span class="old-price">$76.00</span></div>
-                        </div>
-                    </div>
 
-                    <div class="product-box">
-                        <div class="product-img">
-                            <div class="sticker discount">-45%</div>
-                            <div class="sticker new">New</div>
-                            <img src="Assets/alpha_industries_men_s_cwu_pilot_x_flight_jacket_01_270x335_crop_top.png">
-                        </div>
-                        <div class="product-info">
-                            <h2 class="product-name">Alpha Industries Men's CWU Pilot X Flight Jacket</h2>
-                            <div class="product-description">Whichever aircraft part you need...</div>
-                            <div class="product-price"><span class="sale-price">$120.00</span></div>
-                        </div>
-                    </div>
-
-                    <div class="product-box">
-                        <div class="product-img">
-                            <div class="sticker discount">-45%</div>
-                            <div class="sticker new">New</div>
-                            <img src="Assets/american_optical_original_pilot_eyewear_57mm_frame_1_270x335_crop_top.png">
-                        </div>
-                        <div class="product-info">
-                            <h2 class="product-name">American Optical Original Pilot Eyewear 57mm Frame</h2>
-                            <div class="product-description">We serve pilots of all kinds of...</div>
-                            <div class="product-price">From <span class="sale-price">$55.00</span> <span class="old-price">$65.00</span></div>
-                        </div>
-                    </div>
-
-                    <div class="product-box">
-                        <div class="product-img">
-                            <div class="sticker discount">-45%</div>
-                            <div class="sticker new">New</div>
-                            <img src="Assets/aspen_avionics_evolution_01_270x335_crop_top.png">
-                        </div>
-                        <div class="product-info">
-                            <h2 class="product-name">Aspen Avionics Evolution</h2>
-                            <div class="product-description">Our store was created back in 19...</div>
-                            <div class="product-price"><span class="sale-price">$150.00</span> <span class="old-price">$160.00</span></div>
-                        </div>
-                    </div>
-                    
-                    <div class="product-box">
-                        <div class="product-img">
-                            <div class="sticker discount">-45%</div>
-                            <div class="sticker new">New</div>
-                            <img src="Assets/akg_aviation_av100_anr_headset_01_270x335_crop_top.png">
-                        </div>
-                        <div class="product-info">
-                            <h2 class="product-name">AKG Aviation AV100 ANR Headset</h2>
-                            <div class="product-description">When you deal with sky During ne...</div>
-                            <div class="product-price">From <span class="sale-price">$66.00</span> <span class="old-price">$76.00</span></div>
-                        </div>
-                    </div>
-
-                    <div class="product-box">
-                        <div class="product-img">
-                            <div class="sticker discount">-45%</div>
-                            <div class="sticker new">New</div>
-                            <img src="Assets/alpha_industries_men_s_cwu_pilot_x_flight_jacket_01_270x335_crop_top.png">
-                        </div>
-                        <div class="product-info">
-                            <h2 class="product-name">Alpha Industries Men's CWU Pilot X Flight Jacket</h2>
-                            <div class="product-description">Whichever aircraft part you need...</div>
-                            <div class="product-price"><span class="sale-price">$120.00</span></div>
-                        </div>
-                    </div>
-
-                    <div class="product-box">
-                        <div class="product-img">
-                            <div class="sticker discount">-45%</div>
-                            <div class="sticker new">New</div>
-                            <img src="Assets/american_optical_original_pilot_eyewear_57mm_frame_1_270x335_crop_top.png">
-                        </div>
-                        <div class="product-info">
-                            <h2 class="product-name">American Optical Original Pilot Eyewear 57mm Frame</h2>
-                            <div class="product-description">We serve pilots of all kinds of...</div>
-                            <div class="product-price">From <span class="sale-price">$55.00</span> <span class="old-price">$65.00</span></div>
-                        </div>
-                    </div>
-
-                    <div class="product-box">
-                        <div class="product-img">
-                            <div class="sticker discount">-45%</div>
-                            <div class="sticker new">New</div>
-                            <img src="Assets/aspen_avionics_evolution_01_270x335_crop_top.png">
-                        </div>
-                        <div class="product-info">
-                            <h2 class="product-name">Aspen Avionics Evolution</h2>
-                            <div class="product-description">Our store was created back in 19...</div>
-                            <div class="product-price"><span class="sale-price">$150.00</span> <span class="old-price">$160.00</span></div>
-                        </div>
-                    </div>
 										
                 </div>
             </div>
