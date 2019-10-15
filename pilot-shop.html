@@ -12,6 +12,7 @@
         <script defer src="script.js"></script>
 
         <script id="product" type="text/x-handlebars-template">
+            {{#each products}}
             <div class="product-box">
                 <div class="product-img">
                     {{#if discount}}
@@ -29,6 +30,7 @@
                     </div>
                 </div>
             </div>
+            {{/each}}
         </script>
 
     </head>

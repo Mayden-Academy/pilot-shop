@@ -7,9 +7,7 @@ var template = Handlebars.compile(source)
 fetch('data.json')
     .then(data => data.json())
     .then(data => {
-        data.products.forEach(product => {
-            let html = template(product)
-            document.querySelector('.product-container').innerHTML += html
-        })
+        let html = template(data)
+        document.querySelector('.product-container').innerHTML = html
     })
 
