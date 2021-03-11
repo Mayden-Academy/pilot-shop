@@ -51,12 +51,19 @@ div, input, button, select, h1, h2, h3, h4, h5, h6 {
     line-height: 2.2rem;
 }
 
+.header nav {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
 .header-phone {
     display: none;
 }
 
 .header-search {
     vertical-align: top;
+    order: 3;
 }
 
 #search-field {
@@ -74,26 +81,23 @@ div, input, button, select, h1, h2, h3, h4, h5, h6 {
 }
 
 .header-cart {
-    display: inline-block;
-    float: left;
+    margin-right: 12px;
+    order: 1;
+}
+
+.header-cart button {
     margin-right: 6px;
 }
 
-.header-currency {
-    display: inline-block;
-    float: right;
-    margin-right: 12px;
-}
-
 .header-user {
-    overflow: auto;
-    float: none;
-    margin-top: 30px;
-    clear: both;
+    order: 4;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
 }
 
 .header-user-button {
-    float: left;
     margin-right: 1.5rem;
     font-size: 1.3rem;
     letter-spacing: 0rem;
@@ -246,13 +250,13 @@ div, input, button, select, h1, h2, h3, h4, h5, h6 {
 }
 
 .product-box {
-    width: 25%;
+    width: 100%;
     padding: 0 15px;
     margin-top: 20px;
     overflow: hidden;
     position: relative;
-    height: 440px;
     margin-bottom: 50px;
+    display: flex;
 }
 
 .product-img {
@@ -293,6 +297,7 @@ div, input, button, select, h1, h2, h3, h4, h5, h6 {
 .product-info {
     text-align: center;
     margin-top: 20px;
+    flex: 1;
 }
 
 .product-name {
@@ -338,9 +343,13 @@ div, input, button, select, h1, h2, h3, h4, h5, h6 {
         padding-bottom: 10px;
     }
 
+    .header .content-area {
+        display: flex;
+        justify-content: space-between;
+    }
+
     .header-phone {
         display: block;
-        float: left;
     }
 
     .header-phone a {
@@ -359,19 +368,17 @@ div, input, button, select, h1, h2, h3, h4, h5, h6 {
     }
 
     .header-search {
-        float: right;
         margin-top: -5px;
         font-size: 1.4rem;
     }
 
-    .header-cart, .header-currency {
-        display: inline-block;
-        float: right;
+    .header-cart {
         line-height: inherit;
-        vertical-align: top;
+        position: relative;
     }
 
-    .header-cart button, .header-currency select {
+    .header-cart button,
+    .header-cart select {
         margin-right: 1.9rem;
         font-size: inherit;
         line-height: inherit;
@@ -379,10 +386,9 @@ div, input, button, select, h1, h2, h3, h4, h5, h6 {
     }
 
     .header-user {
-        float: right;
-        clear: none;
-        margin-top: auto;
+        width: auto;
         margin-right: 14px;
+        order: 0;
     }
 
     .header-user-button {
@@ -391,27 +397,24 @@ div, input, button, select, h1, h2, h3, h4, h5, h6 {
         vertical-align: top;
     }
 
-    .header-cart::after, .header-currency::after, .header-user::after {
-        display: inline-block;
+    .header-cart::after, .header-user::after {
         content:"";
         width: 1px;
         background: #e9ebed;
         vertical-align: inherit;
         position: absolute;
-        top: 0;
+        top: -6px;
         height: 51px;
+        right: 1px;
     }
 
     .header-logo {
         display: block;
-        float: left;
         height: 40px;
         margin: auto 0;
     }
 
     .header-menu {
-        margin: 2rem auto;
-        float: right;
         color: #3b3442;
         font-size: 1.6rem;
         margin: auto 0;
@@ -446,9 +449,14 @@ div, input, button, select, h1, h2, h3, h4, h5, h6 {
     .header-sticky {
         overflow: auto;
         position: sticky;
-        top: 0px;
+        top: 0;
         z-index: 999;
         padding: 30px 0;
+    }
+
+    .header-sticky .content-area {
+        display: flex;
+        justify-content: space-between;
     }
 
     .swiper-caption {
@@ -503,8 +511,13 @@ div, input, button, select, h1, h2, h3, h4, h5, h6 {
         display: none;
     }
 
+    .product-box {
+        width: 25%;
+        height: 440px;
+        display: block;
+    }
+
     .product-img {
-        float: none;
         width: 100%;
         max-height: 100%;
     }
