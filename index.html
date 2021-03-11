@@ -4,8 +4,7 @@
         <meta charset="utf-8">
         <title>Pilot Shop Exercise</title>
         <link rel="stylesheet" type="text/css" href="normalize.css">
-        <link rel="stylesheet" type="text/css" href="pilot-shop-style.css">
-        <link rel="stylesheet" type="text/css" href="pilot-desktop-mode.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.4.2/handlebars.js" integrity="sha256-hSzapznWRy/aOZkctlN03an9DxCLlN8ZCQS0lxntiHg=" crossorigin="anonymous"></script>
 
@@ -31,6 +30,8 @@
             </div>
         </script>
 
+
+
     </head>
     <body>
         <div class="header">
@@ -38,33 +39,33 @@
                 <div class="header-phone">
                     <a href="">+800-2345-6789</a>
                 </div>
-                <div class="header-search">
-                    <form class="search-form">
-                        <input id="search-field" type="search" placeholder="search store">
-                        <button id="search-submit" type="submit"><img src="./Assets/Screenshot 2019-07-08 at 09.47.31.png"></button>
-                    </form>
-                </div>
-                <div class="header-cart">
-                    <button id="cart-button">Cart 0</button>
-                </div>
-                <div class="header-currency">
-                    <select>
-                        <option value="USD">USD</option>
-                        <option value="GBP">GBP</option>
-                        <option value="EUR">EUR</option>
-                    </select>
-                </div>
-                <div class="header-user">
-                    <div class="header-user-button">My Account</div>
-                    <div class="header-user-button">Wishlist</div>
-                    <div class="header-user-button">Checkout</div>
-                </div>
+                <nav>
+                    <div class="header-search">
+                        <form class="search-form">
+                            <input id="search-field" type="search" placeholder="search store">
+                            <button id="search-submit" type="submit"><img src="Assets/search.png"></button>
+                        </form>
+                    </div>
+                    <div class="header-cart">
+                        <button id="cart-button">Cart 0</button>
+                        <select>
+                            <option value="USD">USD</option>
+                            <option value="GBP">GBP</option>
+                            <option value="EUR">EUR</option>
+                        </select>
+                    </div>
+                    <div class="header-user">
+                        <div class="header-user-button">My Account</div>
+                        <div class="header-user-button">Wishlist</div>
+                        <div class="header-user-button">Checkout</div>
+                    </div>
+                </nav>
             </div>
         </div>
 
         <div class="header-sticky">
             <div class="content-area">
-                <img class="header-logo" src="./Assets/logo.png">
+                <img class="header-logo" src="Assets/logo.png">
                 <div class="header-menu">
                     <h2 id="headermenu-dropdown">PILOT SHOP</h2>
                     <a href="" id="navigation-active">Home</a>
